@@ -1,0 +1,93 @@
+@import url('https://fonts.googleapis.com/css2?family=Sono:wght@200;300;400;500&display=swap');
+/* NORMALIZE */
+* {
+    box-sizing: border-box;
+    border: 0;
+    margin: 0;
+    padding: 0;
+    scroll-behavior: smooth;
+    font-size: 100%;
+    font: inherit;
+    color: inherit;
+}
+
+/* DEFAULT STYLE */
+:root {
+    font-size: 40px;
+    --text-color: #e2e2e2;
+    --background-color: #000;
+    --orange-button: #f69906;
+    --light-button: #a0a0a0;
+    --dark-button: #313131;
+}
+
+body {
+    background-color: var(--background-color);
+    color: var(--text-color);
+    font-size: 1.2rem;
+    font-family: 'Sono', sans-serif;
+    font-weight: 300;
+}
+
+/* BUTTON STYLING */
+button {
+    cursor: pointer;
+    background-color: var(--dark-button);
+    width: 2.5rem;
+    height: 2.5rem;
+    border-radius: 999px; /*???*/
+    text-align: center;
+}
+.operators {
+    background-color: var(--orange-button);
+    font-size: 1.5rem;
+}
+.clear-buttons {
+    background-color: var(--light-button);
+    color: var(--background-color);
+    font-weight: 400;
+    width: 3.95rem;
+}
+#zero {
+    width: 5.4rem;
+    text-align: left;
+    padding-left: 0.8rem;
+}
+
+/* DISPLAY STYLING */
+#display {
+    font-size: 2.5rem;
+    font-weight: 200;
+    text-align: right;
+}
+
+/* POSITIONING */
+.container {
+    width: 100vw;
+    height: 100vh;
+}
+.flex {
+    display: flex;
+    flex-wrap: wrap-reverse;
+    gap: 0.4rem;
+    justify-content: center;
+    align-items: center;
+}
+
+.flex.column {
+    flex-direction: column;
+}
+
+/* SIZING */
+#calc {
+    width: 11.2rem;
+}
+
+.left {
+    width: 8.3rem;
+}
+.right {
+    width: 2.5rem;
+}
+
+
