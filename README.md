@@ -1,4 +1,4 @@
-This is my 4th project for The Odin Project
+This is my 4th project for The Odin Project.
 Live Preview: https://strandedorca.github.io/calculator/
 # Timeline
 ### 21-03-2023
