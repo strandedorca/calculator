@@ -4,23 +4,23 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="styles.css"
+    <link rel="stylesheet" href="styles.css">
     <script src="javascript.js" defer></script> 
     <title>Calculator</title>
 </head>
 <body>
     <div class="flex container">
         <div id="calc">
-            <div id="display">1999</div>
+            <div id="display">0</div>
             <div id="buttons" class="flex">
                 <div class="flex column left">
                     <div id="clear-buttons" class="flex">
-                        <button class="clear-buttons">AC</button>
-                        <button class="clear-buttons">C</button>
+                        <button class="clear-buttons" id="ac">AC</button>
+                        <button class="clear-buttons" id="c">C</button>
                     </div>
                     <div id="numbers" class="flex">
                         <button id="zero">0</button>
-                        <button>.</button>
+                        <button id="decimal">.</button>
                         <button>1</button>
                         <button>2</button>
                         <button>3</button>
@@ -33,11 +33,11 @@
                     </div>
                 </div>
                 <div id="operators" class="flex column right">
-                    <button class="operators">+</button>
-                    <button class="operators">-</button>
-                    <button class="operators">÷</button>
-                    <button class="operators">×</button>
-                    <button class="operators">=</button>
+                    <button class="operators" value="+">+</button>
+                    <button class="operators" value="-">-</button>
+                    <button class="operators" value="/">÷</button>
+                    <button class="operators" value="*">×</button>
+                    <button id="equal">=</button>
                 </div>
             </div>
         </div>
