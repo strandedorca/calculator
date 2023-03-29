@@ -9,3 +9,8 @@ Live Preview: https://strandedorca.github.io/calculator/
 ![draft2](images/2.jpg)
 - Initial Commit
 - Problem: need to learn more about DOM manipulation and events.
+
+### 29-03-2023
+- Learned about DOM manipulation and events.
+- All DOM nodes selected successfully.
+- Finish all basic scripts.
