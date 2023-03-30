@@ -13,4 +13,11 @@ Live Preview: https://strandedorca.github.io/calculator/
 ### 29-03-2023
 - Learned about DOM manipulation and events.
 - All DOM nodes selected successfully.
-- Finish all basic scripts.
+- Finished all basic scripts.
+
+### 
+- Solved the display problem I was stuck in yesterday for 3 hours (in 20min bruh).
+- Added script to allow decimal points to be used only once.
+- Added script to round floating point numbers.
+- Added script for the clear everything button and the backspace button.
+- Modify the behavior of the "0" button.
