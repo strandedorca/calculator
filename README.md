@@ -15,9 +15,11 @@ Live Preview: https://strandedorca.github.io/calculator/
 - All DOM nodes selected successfully.
 - Finished all basic scripts.
 
-### 
+### 30-02-2023 
 - Solved the display problem I was stuck in yesterday for 3 hours (in 20min bruh).
 - Added script to allow decimal points to be used only once.
 - Added script to round floating point numbers.
 - Added script for the clear everything button and the backspace button.
 - Modify the behavior of the "0" button.
+- Problems remained: overflow display & keyboard support
+- Overflow display solved - but doesn't work with numbers that are too large.

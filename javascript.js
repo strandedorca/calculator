@@ -5,9 +5,27 @@ let num1 = num2 = op = "";
 /* Display 0 if there's no value */
 const display = document.getElementById("display");
 function populate(value) {
+    value = value.toString();
     if (value == "") {
         display.textContent = "0";
     } else {
+        console.log(value, value.length);
+        if (value.length < 8) {
+            display.style.fontSize = "2.5rem";
+        } else if (value.length == 8) {
+            display.style.fontSize = "2.25rem";
+        } else if (value.length == 9) {
+            display.style.fontSize = "2.0rem";
+        } else {
+            let n = value.length - 5;
+            let sup = document.createElement("sup");
+            sup.textContent = n;
+            display.textContent = value.slice(0, 4) + "×10";
+            display.appendChild(sup);
+            return;
+        }
+
+        if (value.length)
         display.textContent = value;
     }
 }
@@ -23,7 +41,6 @@ function operate(op, num1 = "", num2 = "") {
         case '-':
             return num1 - num2;
         case '*':
-            // if (num2 == "") num2 = 1;
             return num1 * num2;
         case '/':
             if (num2 == 0) {
@@ -42,21 +59,16 @@ numbers.addEventListener('click', function(event) {
     /* If not a button -> not interested */
     if (event.target.tagName == 'BUTTON') {
         if (event.target.id != "decimal" || (event.target.id == "decimal" && decimalUsed == false)) {
-            console.log(event.target.id);
-            console.log(decimalUsed);
             /* Check if the decimal point is used */
             if (event.target.id == "decimal") {
                 decimalUsed = true;
             }
             if (op == "") {
-                /* event.target is the element that is clicked */
-                num1 += event.target.textContent;
+                num1 += event.target.value;
                 populate(num1);
-                console.log(`First input: ${num1}.`);
             } else {
-                num2 += event.target.textContent;
+                num2 += event.target.value;
                 populate(num2);
-                console.log(`First input: ${num1}.\nSecond input: ${num2}.`);
             }
         }
     }
@@ -69,13 +81,11 @@ for (let button of ops) {
         if (num2 != "") {
             let result = operate(op, num1, num2);
             populate(result);
-            console.log(result)
             num1 = result;
             num2 = "";
             decimalUsed = false;
         } else {
             op = event.target.value;    
-            console.log('Operator stored!')
         }
     })
 }
@@ -90,8 +100,6 @@ equal.addEventListener('click', () => {
         }
         let result = operate(op, num1, num2);
         populate(result);
-        console.log(`${num1} ${op} ${num2}`);
-        console.log(result);
         num1 = result;
         num2 = "";
         decimalUsed = false;
@@ -103,7 +111,6 @@ const ac = document.getElementById("ac");
 ac.addEventListener('click', () => {
     num1 = num2 = op = "";
     populate("");
-    console.clear();
     decimalUsed = false;
 })
 
@@ -113,13 +120,9 @@ c.addEventListener('click', function(event) {
     if (op == "") {
         num1 = num1.slice(0, num1.length - 1);
         populate(num1);
-        console.log(`First input: ${num1}.`);
     } else {
         num2 = num2.slice(0, num2.length - 1);
         populate(num2);
-        console.log(`First input: ${num1}.\nSecond input: ${num2}.`);
     }
-    console.log("last input cleared")
 })
 
-console.log("Hello Check Check")

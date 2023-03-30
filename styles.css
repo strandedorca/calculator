@@ -28,6 +28,10 @@ body {
     font-family: 'Sono', sans-serif;
     font-weight: 300;
 }
+sup {
+    font-size: 1.5rem;
+}
+
 
 /* BUTTON STYLING */
 button {
@@ -60,6 +64,7 @@ button {
     font-weight: 200;
     text-align: right;
     min-height: 120px;
+    vertical-align: text-bottom;
 }
 
 /* POSITIONING */
