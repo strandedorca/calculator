@@ -9,7 +9,6 @@ function populate(value) {
     if (value == "") {
         display.textContent = "0";
     } else {
-        console.log(value, value.length);
         if (value.length < 8) {
             display.style.fontSize = "2.5rem";
         } else if (value.length == 8) {
@@ -80,12 +79,17 @@ for (let button of ops) {
     button.addEventListener('click', function(event) {
         if (num2 != "") {
             let result = operate(op, num1, num2);
+            console.log(num1, op, num2, result);
             populate(result);
-            num1 = result;
+            console.log(result);
+            num1 = result; 
             num2 = "";
             decimalUsed = false;
+            op = event.target.value;
+            console.log(num2, op)
         } else {
-            op = event.target.value;    
+            op = event.target.value; 
+            console.log(op);   
         }
     })
 }
@@ -99,6 +103,7 @@ equal.addEventListener('click', () => {
             return;
         }
         let result = operate(op, num1, num2);
+        console.log(num1, op, num2, result);
         populate(result);
         num1 = result;
         num2 = "";
@@ -126,3 +131,19 @@ c.addEventListener('click', function(event) {
     }
 })
 
+/* CLICK ANIMATION */
+const allButtons = document.querySelectorAll("button");
+for (let button of allButtons) {
+    button.addEventListener("mousedown", () => button.classList.toggle("is-active"));
+    button.addEventListener("mouseup", () => button.classList.toggle("is-active"));
+    // button.addEventListener("mouseup", (event) => console.log(event.target.textContent))
+    document.addEventListener("keydown", () => button.classList.toggle("is-active"));
+
+    document.addEventListener("keyup", (event) => {
+        console.log(button.id, button.value, event.key)
+        if (event.key == button.id || event.key == button.value) {
+            button.classList.toggle("is-active");
+            button.click();
+        }    
+    });
+}
