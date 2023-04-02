@@ -23,3 +23,9 @@ Live Preview: https://strandedorca.github.io/calculator/
 - Modify the behavior of the "0" button.
 - Problems remained: overflow display & keyboard support
 - Overflow display solved - but doesn't work with numbers that are too large.
+
+### 01-04-2023
+- Fix the display
+
+### 02-04-2023
+- Add click animation
