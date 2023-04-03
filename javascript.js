@@ -95,7 +95,7 @@ for (let button of ops) {
 }
 
 /* Equal button */
-const equal = document.getElementById("equal");
+const equal = document.getElementById("Enter");
 equal.addEventListener('click', () => {
     if (op != "") {
         if (num2 == "") {
@@ -112,7 +112,7 @@ equal.addEventListener('click', () => {
 })
 
 /* Clear everythng */
-const ac = document.getElementById("ac");
+const ac = document.getElementById("Delete");
 ac.addEventListener('click', () => {
     num1 = num2 = op = "";
     populate("");
@@ -120,7 +120,7 @@ ac.addEventListener('click', () => {
 })
 
 /* Clear the last input */
-const c = document.getElementById("c");
+const c = document.getElementById("Backspace");
 c.addEventListener('click', function(event) {
     if (op == "") {
         num1 = num1.slice(0, num1.length - 1);
@@ -136,8 +136,13 @@ const allButtons = document.querySelectorAll("button");
 for (let button of allButtons) {
     button.addEventListener("mousedown", () => button.classList.toggle("is-active"));
     button.addEventListener("mouseup", () => button.classList.toggle("is-active"));
-    // button.addEventListener("mouseup", (event) => console.log(event.target.textContent))
-    document.addEventListener("keydown", () => button.classList.toggle("is-active"));
+
+    document.addEventListener("keydown", (event) => {
+        console.log(button.id, button.value, event.key)
+        if (event.key == button.id || event.key == button.value) {
+            button.classList.toggle("is-active");
+        }    
+    });
 
     document.addEventListener("keyup", (event) => {
         console.log(button.id, button.value, event.key)
